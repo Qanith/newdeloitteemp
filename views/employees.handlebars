@@ -1,0 +1,24 @@
+<!-- views/employees.handlebars -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee List</title>
+</head>
+
+<body>
+    <h1>Employee List</h1>
+    <ul>
+        {{#each employees}}
+        <li>
+            {{name}} - {{department}} - {{position}}
+            <a href="/employees/{{id}}/edit">Edit</a>
+            <form action="/employees/{{id}}?_method=DELETE" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+        {{/each}}
+    </ul>
+</body>
+
+</html>

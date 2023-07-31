@@ -1,0 +1,28 @@
+<!-- views/edit_employee.handlebars -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Employee</title>
+</head>
+
+<body>
+    <h1>Edit Employee</h1>
+    <!-- Change the form method to POST and add the hidden _method field with the value "PUT" -->
+    <form action="/employees/{{employee.id}}?_method=PUT" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{employee.name}}" required>
+        <br>
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" value="{{employee.department}}" required>
+        <br>
+        <label for="position">Position:</label>
+        <input type="text" id="position" name="position" value="{{employee.position}}" required>
+        <br>
+        <!-- Remove the hidden _method field -->
+        <!-- <input type="hidden" name="_method" value="PUT"> -->
+        <button type="submit">Update Employee</button>
+    </form>
+</body>
+
+</html>
